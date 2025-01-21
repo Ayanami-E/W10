@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/header.css"; // 确保 CSS 样式文件已导入
+import "../style/header.css"; // 确保 CSS 样式文件已导入
 
 const Header = () => {
   return (
