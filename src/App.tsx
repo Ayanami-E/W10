@@ -9,11 +9,19 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Header />
+        <div data-testid="pg-header">
+          <Header />
+        </div>
         <main style={{ padding: '20px' }}>
           <Routes>
-            <Route path="/" element={<div>{t("This is the front page")}</div>} />
-            <Route path="/about" element={<div>{t("About")}</div>} />
+            <Route 
+              path="/" 
+              element={<div data-testid="pg-container">{t("This is the front page")}</div>} 
+            />
+            <Route 
+              path="/about" 
+              element={<div data-testid="pg-about">{t("About")}</div>} 
+            />
           </Routes>
         </main>
       </div>
