@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import '../styles/About.css'  
+import '../styles/about.css'  
 
 interface Post {
   id: number
