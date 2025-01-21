@@ -4,7 +4,11 @@
   border-bottom: 1px solid #e9ecef;
 }
 
-.header nav ul {
+.header nav {
+  margin-top: 1rem;
+}
+
+.header ul {
   list-style: none;
   display: flex;
   gap: 1rem;
@@ -12,19 +16,19 @@
   padding: 0;
 }
 
-.header nav ul li {
-  margin: 0;
+.header a {
+  color: #333;
+  text-decoration: none;
 }
 
-.header a {
-  text-decoration: none;
-  color: #333;
+.header a:hover {
+  color: #007bff;
 }
 
 .header button {
   padding: 0.25rem 0.5rem;
   border: 1px solid #ddd;
-  background: #fff;
+  background: white;
   cursor: pointer;
   border-radius: 4px;
 }
