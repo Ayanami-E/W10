@@ -1,39 +1,37 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import Backend from 'i18next-http-backend';
 
 const resources = {
   en: {
     translation: {
-      "Home": "Home",
-      "About": "About",
-      "This is the front page": "This is the front page"
+      "home": "Home",
+      "about": "About",
+      "frontPage": "This is the front page"
     }
   },
   fi: {
     translation: {
-      "Home": "Etusivu",
-      "About": "Tietoa Meistä",
-      "This is the front page": "Tämä on etusivu"
+      "home": "Etusivu",
+      "about": "Tietoa Meistä",
+      "frontPage": "Tämä on etusivu"
     }
   }
 };
 
 i18n
-  .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
     fallbackLng: 'en',
-    debug: true,
+    supportedLngs: ['en', 'fi'],
     interpolation: {
       escapeValue: false,
-    },
-    detection: {
-      order: ['navigator']
     }
+  })
+  .then(() => {
+    console.log('i18n initialized');
   });
 
 export default i18n;
