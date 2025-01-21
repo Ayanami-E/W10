@@ -1,32 +1,34 @@
 .header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-  }
-  
-  nav ul li {
-    display: inline;
-  }
-  
-  nav ul li a, nav ul li button {
-    color: white;
-    text-decoration: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  nav ul li a:hover, nav ul li button:hover {
-    text-decoration: underline;
-  }
-  
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header nav ul li {
+  margin: 0;
+}
+
+.header a {
+  text-decoration: none;
+  color: #333;
+}
+
+.header button {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.header button:hover {
+  background: #f0f0f0;
+}
