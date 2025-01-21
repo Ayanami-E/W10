@@ -1,11 +1,11 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 const MyContainer = () => {
   const { t } = useTranslation();
   
   return (
-    <div>
-      <h2>{t('This is the front page')}</h2>
+    <div data-testid="pg-container">
+      {t('This is the front page')}
     </div>
   );
 };
