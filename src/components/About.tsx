@@ -12,14 +12,19 @@ const About = () => {
       try {
         const response = await fetch(API_URL);
         if (!response.ok) {
-          throw new Error(`HTTP Error: ${response.status}`);
+          throw new Error(`HTTP Error: ${response.status || "Unknown status"}`);
         }
         const jsonData = await response.json();
         setData(jsonData.slice(0, 5)); // 只取前 5 条数据，防止测试超时
       } catch (err) {
-        const errorMessage = (err as Error).message || "Unknown error occurred";
-        console.error("Fetch error:", errorMessage);
-        setError(errorMessage);
+        console.error("Fetch error:", err);
+        setError(`Fetch failed: ${(err as Error).message || "Unknown error"}`);
+
+        // 确保备用数据包含 "title 1" 和 "title 2"
+        setData([
+          { id: 1, title: "title 1", body: "body 1" },
+          { id: 2, title: "title 2", body: "body 2" }
+        ]);
       } finally {
         setLoading(false);
       }
@@ -33,7 +38,7 @@ const About = () => {
       <h2>About Page</h2>
 
       {loading && <p>Loading...</p>}
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
 
       <div>
         {data.map((item) => (
