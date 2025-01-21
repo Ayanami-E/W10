@@ -14,15 +14,13 @@ i18n
     resources: {
       en: {
         translation: {
-          "My Website": "My Website",
-          "Home": "Home Page",
+          "Home": "Home",
           "About": "About",
           "This is the front page": "This is the front page"
         }
       },
       fi: {
         translation: {
-          "My Website": "Minun Verkkosivustoni",
           "Home": "Etusivu",
           "About": "Tietoa Meistä",
           "This is the front page": "Tämä on etusivu"
