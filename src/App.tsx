@@ -1,26 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
+import MyContainer from './components/MyContainer';
+import About from './components/About';
 import './i18n';
 
 const App = () => {
-  const { t } = useTranslation();
-
   return (
     <Router>
       <div>
         <div data-testid="pg-header">
           <Header />
         </div>
-        <main style={{ padding: '20px' }}>
+        <main className="container">
           <Routes>
             <Route 
               path="/" 
-              element={<div data-testid="pg-container">{t("This is the front page")}</div>} 
+              element={<div data-testid="pg-container"><MyContainer /></div>} 
             />
             <Route 
               path="/about" 
-              element={<div data-testid="pg-about">{t("About")}</div>} 
+              element={<div data-testid="pg-about"><About /></div>} 
             />
           </Routes>
         </main>
