@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import '../styles/About.css';
 
 interface Post {
   id: number;
@@ -9,7 +9,6 @@ interface Post {
 
 const About = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -26,14 +25,15 @@ const About = () => {
   }, []);
 
   return (
-    <div>
-      <h2>{t('About')}</h2>
-      {posts.map(post => (
-        <div key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.body}</p>
-        </div>
-      ))}
+    <div data-testid="pg-about">
+      <div className="grid-container">
+        {posts.map(post => (
+          <div key={post.id} className="grid-item">
+            <h3>{post.title}</h3>
+            <p>{post.body}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
