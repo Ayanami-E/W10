@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import "../../styles/header.css"; // 确保 CSS 存在
+import "../../style/header.css"; // 确保 CSS 存在
 
 const Header = () => {
   const { t, i18n } = useTranslation();
