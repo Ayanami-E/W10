@@ -1,36 +1,34 @@
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import HttpBackend from 'i18next-http-backend'
-import LanguageDetector from 'i18next-browser-languagedetector'
-
-const resources = {
-  en: {
-    translation: {
-      Home: "Home",
-      About: "About",
-      frontPage: "This is the front page"
-    }
-  },
-  fi: {
-    translation: {
-      Home: "Etusivu",
-      About: "Tietoa Meistä",
-      frontPage: "Tämä on etusivu"
-    }
-  }
-}
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 i18n
-  .use(HttpBackend)               
-  .use(LanguageDetector)          
-  .use(initReactI18next)          
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
-    resources,
-    fallbackLng: 'en',            
-    debug: false,
+    fallbackLng: 'en',
+    debug: true,
     interpolation: {
-      escapeValue: false
+      escapeValue: false,
+    },
+    resources: {
+      en: {
+        translation: {
+          "My Website": "My Website",
+          "Home": "Home",
+          "About": "About",
+          "This is the front page": "This is the front page"
+        }
+      },
+      fi: {
+        translation: {
+          "My Website": "Minun Verkkosivustoni",
+          "Home": "Etusivu",
+          "About": "Tietoa Meistä",
+          "This is the front page": "Tämä on etusivu"
+        }
+      }
     }
-  })
+  });
 
-export default i18n
+export default i18n;
