@@ -15,7 +15,7 @@ i18n
       en: {
         translation: {
           "My Website": "My Website",
-          "Home": "Home",
+          "Home": "Home Page",
           "About": "About",
           "This is the front page": "This is the front page"
         }
