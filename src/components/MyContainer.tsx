@@ -1,13 +1,13 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
 const MyContainer = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   
   return (
-    <div data-testid="pg-container" className="p-4">
-      {t('frontPage')}
+    <div data-testid="pg-container">
+      {t('This is the front page')}
     </div>
-  )
-}
+  );
+};
 
-export default MyContainer
+export default MyContainer;
