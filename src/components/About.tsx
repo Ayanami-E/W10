@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './About.css';
 
 interface Post {
   id: number;
@@ -20,17 +19,19 @@ const About = () => {
         console.error('Error fetching posts:', error);
       }
     };
-
     fetchPosts();
   }, []);
 
   return (
     <div data-testid="pg-about">
-      <div className="grid-container">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {posts.map(post => (
-          <div key={post.id} className="grid-item">
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
+          <div 
+            key={post.id} 
+            className="bg-gray-100 p-4 border border-gray-300 rounded-lg text-center shadow hover:shadow-md transition-shadow"
+          >
+            <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
+            <p className="text-gray-600">{post.body}</p>
           </div>
         ))}
       </div>
