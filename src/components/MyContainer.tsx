@@ -5,7 +5,7 @@ const MyContainer = () => {
   
   return (
     <div data-testid="pg-container">
-      {t('This is the front page')}
+      {t('frontPage')}
     </div>
   );
 };
