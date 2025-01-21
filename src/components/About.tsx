@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import '../style/About.css';
+import '../style/header.css';
+import '../style/About.css'; // 保持原来的样式引入
 
 interface Post {
   id: number;
